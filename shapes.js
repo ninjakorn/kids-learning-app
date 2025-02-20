@@ -13,6 +13,7 @@ const shapes = [
 ];
 
 export function showShapesSection() {
+    console.log("showShapesSection() has been called.");
     let content = `<h2 class='section-title'>Shapes</h2><div class='grid'>`;
 
     shapes.forEach((shape, index) => {

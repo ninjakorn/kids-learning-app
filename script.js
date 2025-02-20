@@ -4,6 +4,7 @@ import { showNumbersSection } from './numbers.js';
 import { showColorsSection } from './colors.js';
 import { showShapesSection } from './shapes.js';
 import { startQuiz, checkAnswer } from './quiz.js';
+import { showDrawingBoard } from './drawing.js';
 import { applyBackgroundAnimation } from './background.js';
 
 let hasStarted = false;
@@ -71,7 +72,7 @@ export function showMainMenu() {
     let menuHtml = `<h2 class='section-title'>Choose A Game Below To Get Started</h2>
                     <div class='buttons-container'>`;
 
-        ["letters", "numbers", "colors", "shapes", "quiz"].forEach((section, index) => {
+        ["letters", "numbers", "colors", "shapes", "quiz", "drawing"].forEach((section, index) => {
             menuHtml += `<button class='animated-button menu-button' 
                             style='background: ${buttonColors[index % buttonColors.length]}; color: white;' 
                             onclick='navigateToSection("${section}")'>
@@ -93,9 +94,11 @@ export function navigateToSection(section) {
     } else if (section === "colors") {
         showColorsSection();
     } else if (section === "shapes") {
-        showShapesSection(); // ✅ Added Shapes Section
+        showShapesSection();
     } else if (section === "quiz") {
         startQuiz();
+    } else if (section === "drawing") {
+        showDrawingBoard();  // ✅ Now supports the drawing feature!
     }
 }
 

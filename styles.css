@@ -226,3 +226,54 @@ body {
     z-index: -1;
     background: url('images/landscape.jpg') no-repeat center/cover;
 }
+
+.drawing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    overflow: hidden;
+    padding-top: 60px; /* Space for controls */
+    padding-bottom: 60px; /* Space for back button */
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.controls label {
+    font-size: 1.2em;
+}
+
+.controls input {
+    margin: 5px;
+}
+
+.clear-button {
+    background: red;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+canvas {
+    background: white;
+    display: block;
+    border: 2px solid black;
+    height: 70vh; /* ✅ Keeps vertical control */
+}
+
+
