@@ -8,7 +8,40 @@
 </head>
 <body>
     <div id="content"></div>
+    <audio id="backgroundMusic" src="./audio/site-music.mp3" loop></audio>
+        <div>
+            <button id="toggleMusic">Turn Off Music</button>
+            <label>
+                Volume: <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+            </label>
+        </div>
     <div class="animated-background"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const music = document.getElementById("backgroundMusic");
+                const toggleButton = document.getElementById("toggleMusic");
+                const volumeControl = document.getElementById("volumeControl");
+        
+                // Automatically play music on load
+                music.play();
+        
+                // Toggle play/pause on button click
+                toggleButton.addEventListener("click", () => {
+                    if (music.paused) {
+                        music.play();
+                        toggleButton.textContent = "Turn Off Music";
+                    } else {
+                        music.pause();
+                        toggleButton.textContent = "Turn On Music";
+                    }
+                });
+        
+                // Adjust volume when slider is moved
+                volumeControl.addEventListener("input", () => {
+                    music.volume = volumeControl.value;
+                });
+            });
+        </script>
     <script type="module" src="script.js"></script>
 </body>
 </html>
