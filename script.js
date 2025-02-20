@@ -117,3 +117,7 @@ window.showMainMenu = showMainMenu;
 window.navigateToSection = navigateToSection;
 window.checkAnswer = checkAnswer;
 window.playAudio = playAudio;
+
+
+//Music: Bensound
+//License code: PQT3ODHB1D075YVR
